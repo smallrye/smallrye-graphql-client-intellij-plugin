@@ -13,10 +13,7 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description><![CDATA[
-    Auto-Complete MicroProfile GraphQL Typesafe Client API interfaces and types/inputs
-    from a `schema.graphql` file in your project directory.
-  ]]></description>
+    <description><![CDATA[this value will be replaced with the text from the README.md]]></description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
