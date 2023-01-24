@@ -2,6 +2,8 @@
 
 # SmallRye GraphQL Client IntelliJ Plugin Changelog
 
+## [Unreleased]
+
 ## [0.1.1] - 2023-01-24
 
 ### Added
