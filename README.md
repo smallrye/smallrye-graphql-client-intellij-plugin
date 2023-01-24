@@ -4,17 +4,6 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/20875-smallrye-graphql-client.svg)](https://plugins.jetbrains.com/plugin/20875-smallrye-graphql-client)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/20875-smallrye-graphql-client.svg)](https://plugins.jetbrains.com/plugin/20875-smallrye-graphql-client)
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [x] Get familiar with the [template documentation][template].
-- [x] Verify the [pluginGroup](./gradle.properties), [plugin ID](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [x] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [x] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [x] Set the Plugin ID in the above README badges.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [x] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-
 [//]: # (To keep everything working, do not remove `<!-- ... -->` sections.)
 <!-- Plugin description -->
 Auto-Complete SmallRye GraphQL Typesafe Client API interfaces and types/inputs
