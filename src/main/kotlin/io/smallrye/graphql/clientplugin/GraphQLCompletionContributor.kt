@@ -67,7 +67,7 @@ class GraphQLCompletionContributor : CompletionContributor() {
         }
 
         private fun findApi(parameters: CompletionParameters): PsiClass? {
-            var element = parameters.originalPosition!!
+            var element = parameters.originalPosition ?: return null
             // user already typed a GraphQL field/method name
             if (element is PsiIdentifier && element.getParent() is PsiJavaCodeReferenceElement) {
                 while (element.parent != null) {
