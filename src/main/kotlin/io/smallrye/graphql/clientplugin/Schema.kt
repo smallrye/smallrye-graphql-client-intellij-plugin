@@ -51,20 +51,22 @@ internal class Schema {
     }
 
     private fun schema(): TypeDefinitionRegistry? {
-        val activeProject = ProjectUtil.getActiveProject() ?: return emptyBecause("no active project")
-        val basePath = activeProject.basePath ?: return emptyBecause("no base path in project " + activeProject.name)
+        val activeProject = ProjectUtil.getActiveProject() ?: return emptyBecause("no active project", true)
+        val basePath = activeProject.basePath ?: return emptyBecause("no base path in project " + activeProject.name, true)
         val path = Paths.get(basePath).resolve("schema.graphql")
-        return if (!Files.exists(path)) emptyBecause("no GraphQL schema found at $path")
+        return if (!Files.exists(path)) emptyBecause("no GraphQL schema found at $path", false)
         else try {
             parse(path)
         } catch (e: RuntimeException) {
-            emptyBecause("parsing of schema at $path failed:\n${e.message}")
+            emptyBecause("parsing of schema at $path failed:\n${e.message}", true)
         }
     }
 
-    private fun emptyBecause(message: String): TypeDefinitionRegistry? {
+    private fun emptyBecause(message: String, showAsError: Boolean): TypeDefinitionRegistry? {
         debug(message)
-        errors!!.accept(message)
+        if(showAsError) {
+            errors!!.accept(message)
+        }
         return null
     }
 
