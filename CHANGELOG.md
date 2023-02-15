@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 2023-02-15
+
+### Fixed
+- In projects that have a `@GraphQLClientAPI` but no schema.graphql, the message that tells you about it was changed from an error to a notification
+
 ## [0.1.1] - 2023-01-24
 
 ### Added
