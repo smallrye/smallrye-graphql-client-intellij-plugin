@@ -28,4 +28,7 @@
                 implementationClass="io.smallrye.graphql.clientplugin.GraphQLCompletionContributor"
                 order="first"/>
     </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="GraphQL Client Notifications" displayType="STICKY_BALLOON"/>
+    </extensions>
 </idea-plugin>

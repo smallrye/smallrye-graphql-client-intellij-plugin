@@ -5,10 +5,7 @@ import com.intellij.codeInsight.completion.CompletionParameters
 import com.intellij.codeInsight.completion.CompletionProvider
 import com.intellij.codeInsight.completion.CompletionResultSet
 import com.intellij.codeInsight.completion.CompletionType
-import com.intellij.codeInsight.hint.HintManager
 import com.intellij.codeInsight.lookup.LookupElementBuilder
-import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.editor.Editor
 import com.intellij.patterns.PsiJavaPatterns
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiField
@@ -29,11 +26,9 @@ class GraphQLCompletionContributor : CompletionContributor() {
     }
 
     private class GraphQLCompletionProvider : CompletionProvider<CompletionParameters>() {
-        private var editor: Editor? = null
-
         override fun addCompletions(parameters: CompletionParameters, context: ProcessingContext, result: CompletionResultSet) {
-            this.editor = parameters.editor
-            val schema = schema()
+            Schema.editor = parameters.editor
+            val schema = Schema.INSTANCE
             graphQLClientApi(parameters)?.let { api: PsiClass ->
                 val existingMethods = existing(api, PsiMethod::class.java)
                 Stream.concat(
@@ -61,7 +56,7 @@ class GraphQLCompletionContributor : CompletionContributor() {
 
         private fun graphQLType(parameters: CompletionParameters): PsiClass? {
             val api = findApi(parameters)
-            if (api == null || api.isInterface || api.name !in schema().typeNames()) return null
+            if (api == null || api.isInterface || api.name !in Schema.INSTANCE.typeNames()) return null
             LOG.fine("found GraphQL type " + api.name)
             return api
         }
@@ -86,14 +81,6 @@ class GraphQLCompletionContributor : CompletionContributor() {
                 .filter { obj -> type.isInstance(obj) }
                 .map { element -> (element as PsiNamedElement).name!! }
                 .collect(Collectors.toSet())
-        }
-
-        private fun schema(): Schema {
-            return Schema.INSTANCE.withErrors { message: String -> this.error(message) }
-        }
-
-        private fun error(message: String) {
-            ApplicationManager.getApplication().invokeLater { HintManager.getInstance().showErrorHint(editor!!, message) }
         }
 
         companion object {
