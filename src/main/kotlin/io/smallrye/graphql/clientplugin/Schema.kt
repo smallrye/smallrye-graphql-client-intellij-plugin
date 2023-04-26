@@ -166,6 +166,7 @@ internal class Schema {
                         typeName = "String"
                         prefix = "@Id $prefix"
                     }
+                    "Void" -> typeName = "void"
                 }
                 return prefix + typeName + suffix
             }
