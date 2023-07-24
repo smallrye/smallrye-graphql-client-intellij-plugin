@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+## [1.0.0] - 2023-07-24
+
+### Fixed
+- Fixed the plugin metadata to allow running with IDEA 2023.2
+
 ## [0.2.0] - 2023-02-15
 
 ### Fixed
