@@ -72,7 +72,9 @@ tasks {
     patchPluginXml {
         version.set(properties("pluginVersion"))
         sinceBuild.set(properties("pluginSinceBuild"))
-        untilBuild.set(properties("pluginUntilBuild"))
+        // Not specifying until-build means it will include all future builds (including unreleased IDE versions, which might impact compatibility later).
+        // see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html
+        // untilBuild.set(properties("pluginUntilBuild"))
 
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         pluginDescription.set(
