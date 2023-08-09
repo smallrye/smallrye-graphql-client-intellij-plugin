@@ -23,4 +23,10 @@
 
 ### Added
 - Autocompleting Query and Mutation methods in typesafe clients (interfaces annotated with `@GraphQLClient`)
-- Autocompleting fields inside classes that are recognized as model classes of a typesafe GraphQL client 
+- Autocompleting fields inside classes that are recognized as model classes of a typesafe GraphQL client
+
+[Unreleased]: https://github.com/smallrye/smallrye-graphql-client-intellij-plugin/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/smallrye/smallrye-graphql-client-intellij-plugin/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/smallrye/smallrye-graphql-client-intellij-plugin/compare/v0.2.0...v1.0.0
+[0.2.0]: https://github.com/smallrye/smallrye-graphql-client-intellij-plugin/compare/v0.1.1...v0.2.0
+[0.1.1]: https://github.com/smallrye/smallrye-graphql-client-intellij-plugin/commits/v0.1.1
