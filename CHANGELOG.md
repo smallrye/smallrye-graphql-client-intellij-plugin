@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+## [1.0.1] - 2023-08-09
+
+### Fixed
+- Fixed the plugin compatibility metadata
+
 ## [1.0.0] - 2023-07-24
 
 ### Fixed
